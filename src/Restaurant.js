@@ -23,12 +23,14 @@ function Restaurant({ name, website_link, embedded_pdf }) {
         </div>
       )}
       {embedded_pdf && (
-        <embed
-          src={embedded_pdf}
-          type="application/pdf"
-          width="100%"
-          height="600px"
-        />
+        <div className="embed-container">
+          <embed
+            src={embedded_pdf}
+            type="application/pdf"
+            width="100%"
+            height="99%"
+          />
+        </div>
       )}
     </div>
   );
