@@ -68,17 +68,3 @@
     display: block; /* Show the arrow on hover */
 }
 
-.embed-container {
-    margin: 2vh auto;
-    width: 100%;
-    max-width: 1080px;
-    height: 100vh;
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-}
-
-@media (max-width: 768px) {
-    .embed-container {
-        height: 75vh;
-    }
-}
