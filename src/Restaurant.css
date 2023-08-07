@@ -1,0 +1,32 @@
+.card-container {
+    width: 75%;
+    margin: 20px auto; /* Center the card */
+    display: flex; /* Enable flex layout for the card */
+    border: 1px solid #ccc; /* Optional border */
+}
+
+.card-image {
+    width: 25%;
+    height: auto;
+    max-width: 100%;
+}
+
+.card-content {
+    width: 75%;
+    padding: 10px; /* Padding for aesthetics */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content a {
+    display: block;
+    margin-top: 10px; /* Spacing between the preview text and link */
+    color: #007bff; /* Basic link color, feel free to change */
+    text-decoration: none; /* Remove underlines */
+}
+
+.card-content a:hover {
+    text-decoration: underline; /* Underline on hover for better UX */
+}

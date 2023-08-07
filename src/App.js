@@ -1,31 +1,25 @@
 import React from 'react';
 import {BrowserRouter as Router, Route, Link, Routes} from 'react-router-dom';
 import './App.css';
-import logo from './logo.png';
 import utils from './utils';
 import Restaurant from './Restaurant';
 
 function App() {
   const restaurants = [
     {
-      name: "El Lomo y la Aguja",
-      menu_link: null,
-      embedded_pdf: "/el_lomo_y_la_aguja.pdf",
+      name: "Ibagari",
+      website_link: "https://facebook.com/ibagaricoffeesv",
+      embedded_pdf: "/ibagari.pdf",
     },
     {
-      name: "Tony Roma's",
-      menu_link: "https://tonyromas.com/on-our-menu/",
-      embedded_pdf: null,
+      name: "Buena Vista",
+      website_link: "https://facebook.com/PUPUSERIABUENAVISTA",
+      embedded_pdf: "/buena_vista.pdf",
     },
     {
-      name: "Hacienda Real",
-      menu_link: null,
-      embedded_pdf: "/hacienda_real.pdf",
-    },
-    {
-      name: "Koi Sushi",
-      menu_link: "http://www.koi.com.sv/menus.php",
-      embedded_pdf: null,
+      name: "Abbi",
+      website_link: "https://facebook.com/abbipupuseria",
+      embedded_pdf: "/abbi.pdf",
     },
   ]
   return (
@@ -34,10 +28,10 @@ function App() {
         <header className="App-header">
           <Routes>
             <Route path="/" element={<Home restaurants={restaurants} />} />
-            {restaurants.map(({name, menu_link, embedded_pdf}, index) => (
+            {restaurants.map(({name, website_link, embedded_pdf}, index) => (
               console.log(utils.name_to_lower(name)) ||
               <Route key={index} path={`/${utils.name_to_lower(name)}`}
-                     element={<Restaurant name={name} menu_link={menu_link} embedded_pdf={embedded_pdf}/>}/>
+                     element={<Restaurant name={name} website_link={website_link} embedded_pdf={embedded_pdf}/>}/>
             ))}
           </Routes>
         </header>
@@ -46,12 +40,22 @@ function App() {
   );
 }
 
-const Home = ({restaurants}) => <>
-  <img src={logo} className="App-logo" alt="logo"/>
-  <h1>Monticello</h1>
-  <nav>
-    {restaurants.map(({name}, index) => (<Link key={index} to={utils.name_to_lower(name)}>{name}</Link>))}
-  </nav>
-</>;
+const Home = ({ restaurants }) => (
+  <>
+    <div className="background-container">
+      <img src="/background.jpg"/>
+    </div>
+    <h1>La Cueva de Monticello</h1>
+    <div className="nav-container">
+      {restaurants.map(({ name }, index) => (
+        <div key={index} className="card">
+          <Link to={utils.name_to_lower(name)}>
+            <img src={`/${utils.name_to_lower(name)}.jpg`} alt={name} />
+          </Link>
+        </div>
+      ))}
+    </div>
+  </>
+);
 
 export default App;
