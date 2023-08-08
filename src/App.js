@@ -21,6 +21,11 @@ function App() {
       website_link: "https://facebook.com/abbipupuseria",
       embedded_pdf: "/abbi.pdf",
     },
+    {
+      name: "Nativo",
+      website_link: null,
+      embedded_pdf: "/nativo.pdf",
+    },
   ]
   return (
     <Router>

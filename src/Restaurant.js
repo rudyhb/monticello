@@ -13,12 +13,10 @@ function Restaurant({name, website_link, embedded_pdf}) {
           <div className="arrow"></div>
         </Link>
       </div>
-      {/*<h2>{name}</h2>*/}
       {website_link && (
         <div className="card-container">
           <img className="card-image" src={`/${utils.name_to_lower(name)}.jpg`} alt={`${name}`}/>
           <div className="card-content">
-            {/*<div>Link Preview Text</div>*/}
             <a href={website_link} target="_blank" rel="noopener noreferrer">{website_link}</a>
           </div>
         </div>
