@@ -7,7 +7,7 @@ const pdfjsDistPackageJsonPath = path.resolve(
 );
 const pdfjsDistPath = path.dirname(pdfjsDistPackageJsonPath);
 
-const pdfWorkerPath = path.join(pdfjsDistPath, 'build', 'pdf.worker.js');
+const pdfWorkerPath = path.join(pdfjsDistPath, 'build', 'pdf.worker.min.js');
 
 const targetDir = 'public';
 const targetPath = path.join(targetDir, 'pdf.worker.js');
